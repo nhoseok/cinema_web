@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>시골 극장</title>
+</head>
+
+<body>
+    <header>
+        <div id="mylogo"><a href="main.html"><img src="media\mylogo.png"></a></div>
+        <div id="menu"><a href="main.html">홈</a><a href="movie.html">상영영화</a><a href="theater.html">극장안내</a></div>
+    </header>
+    <section>
+        <h3>예약하신 날짜 및 시간을 입력해주세요</h3>
+        <br>
+        <fieldset>
+            <legend>날짜 및 시간 선택</legend>
+            <label for="time">날짜 및 시간 : </label>
+            <input type="datetime-local" id="mytime">
+        </fieldset>
+        <input type="button" value="입력" onclick="myBooklist('mytime')">
+        <br>
+        <table border="1">
+            <tr><th>예약인원</th><td id="num">0</td></tr>
+            <tr><th>예약영화</th><td id="mov">0</td></tr>
+            <tr><th>예약좌석</th><td id="seat">0</td></tr>
+        </table>
+        <input type="button" value="예약취소" onclick="cancelBook()">
+        <script type="text/javascript">
+            var myArr = []
+            function myBooklist(id){
+                var myTime = document.getElementById(id).value
+                myArr = JSON.parse(localStorage.getItem(myTime))
+                console.log(myArr)
+                var myBookernum = myArr[0]
+                var myMovie = myArr[1]
+                var mySeats = myArr[2]
+                console.log(myBookernum)
+                console.log(myMovie)
+                console.log(mySeats)
+                
+                document.getElementById("num").innerHTML = myBookernum
+                document.getElementById("mov").innerHTML = myMovie
+                document.getElementById("seat").innerHTML = mySeats
+            }
+
+            function cancelBook() {
+                var delTime = document.getElementById("mytime")
+                console.log(delTime)
+                localStorage.removeItem(delTime.value)
+                alert('예약이 삭제되었습니다.')
+
+                document.getElementById("num").innerHTML = 0
+                document.getElementById("mov").innerHTML = 0
+                document.getElementById("seat").innerHTML = 0
+            }
+        </script>
+    </section>
+    <footer>
+        <div id="info"></div>
+    </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>시골 극장</title>
+</head>
+
+<body>
+    <header>
+        <div id="mylogo"><a href="main.html"><img src="media\mylogo.png"></a></div>
+        <div id="menu"><a href="main.html">홈</a><a href="movie.html">상영영화</a><a href="theater.html">극장안내</a></div>
+    </header>
+    <section>
+        <div id="goBooking" onclick="showPopup()"><img src="media\booking.png"></a></div>
+        <div id="goBookinglist"><a href="bookinglist.html"><img src="media\checkbooking.png"></a></div>
+    </section>
+    <footer>
+        <div id="info"></div>
+    </footer>
+    <script type="text/javascript">
+        function showPopup() {
+            window.open("bookpopup.html", "bookingpopup", "width=400px, height=300px, left=50px, top=50px")
+        }
+    </script>
+</body>
+
+</html>
