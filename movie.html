@@ -3,40 +3,154 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>시골 극장</title>
+    <title>작은 극장</title>
+    <style>
+        @import url(design.css);
+    </style>
 </head>
 
 <body>
-    <header>
-        <div id="mylogo"><a href="main.html"><img src="media\mylogo.png"></a></div>
-        <div id="menu"><a href="main.html">홈</a><a href="movie.html">상영영화</a><a href="theater.html">극장안내</a></div>
-    </header>
-    <section>
-        <table>
-            <tr>
-            <td>
-                <div id="drstrange"><a href="https://www.youtube.com/embed/mI9oyFMUlfg" target="bottom"><img src="media\drstrange.jpg" style="width: 120px; height: 200px;"></div>
-            </td>
-            <td>
-                <div id="dumbledore"><a href="https://www.youtube.com/embed/N4Ds-d2PQ-I" target="bottom"><img src="media\dumbledore.jpg" style="width: 120px; height: 200px;"></div>
-            </td>
-            <td>
-                <div id="crimecity"><a href="https://www.youtube.com/embed/Lcy1vnU7RHw" target="bottom"><img src="media\crimecity.jpg" style="width: 120px; height: 200px;"></div>
-            </td>
-            <td>
-                <div id="jurassic"><a href="https://www.youtube.com/embed/DSEfRVqjbFA" target="bottom"><img src="media\jurassicworld.jpg" style="width: 120px; height: 200px;"></div>
-            </td>
-            </tr>
-            <tr>
-            <td colspan="4">
-                <iframe id="introduced" name="bottom"></iframe>
-            </td>
-            </tr>
-        </table>
-    </section>
-    <footer>
-        <div id="info"></div>
-    </footer>
+    <div id="wrap">
+        <header id="header">
+            <div id="mylogo"><a href="main.html"><img src="media\mylogo.png" style="width: 200px; height: 200px"></a>
+            </div>
+            <div id="menu">
+                <a href="main.html"><img src="media\home.png" style="width: 80px; height: 80px;"></a>
+                <a href="movie.html"><img src="media\film.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+                <a href="theater.html"><img src="media\theater.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+            </div>
+        </header>
+        <br>
+        <br>
+        <section id="ourfilms">
+            <h2 id="nowplay">현재 상영 중인 영화</h2>
+            <br><br><br><br>
+            <div id="drstrange">
+                <div id="intro">
+                    <div id="pos">
+                        <img id="poster" src="media\drstrange.jpg">
+                    </div>
+                    <div id="con">
+                        <p>
+                            지금껏 본 적 없는 마블의 극한 상상력!<br>
+                            5월, 광기의 멀티버스가 깨어난다!<br>
+                            끝없이 균열되는 차원과 뒤엉킨 시공간의 멀티버스가 열리며<br>
+                            오랜 동료들, 그리고 차원을 넘어 들어온 새로운 존재들을 맞닥뜨리게 된 `닥터 스트레인지`.<br>
+                            대혼돈 속, 그는 예상치 못한 극한의 적과 맞서 싸워야만 하는데….
+                        </p>
+                    </div>
+                </div>
+                <div id="teas">
+                    <iframe id="teas" src="https://www.youtube.com/embed/mI9oyFMUlfg" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <br><br>
+            <div id="dumbledore">
+                <div id="intro">
+                    <div id="pos">
+                        <img id="poster" src="media\dumbledore.jpg">
+                    </div>
+                    <div id="con">
+                        <p>
+                            가장 위험한 마법에 맞선, 세상을 구할 전쟁이 시작된다!<br>
+                            1930년대, 제2차 세계대전에 마법사들이 개입하게 되면서<br>
+                            강력한 어둠의 마법사 그린델왈드의 힘이 급속도로 커진다.<br>
+                            덤블도어는 뉴트 스캐맨더에게 위대한 마법사 가문 후손,<br>
+                            마법학교의 유능한 교사, 머글 등으로 이루어진 팀에게 임무를 맡긴다.<br>
+                            이에 뉴트와 친구들은 머글과의 전쟁을 선포한<br>
+                            그린델왈드와 추종자들, 그의 위험한 신비한 동물들에 맞서 세상을 구할 거대한 전쟁에 나선다.<br>
+                            한편 전쟁의 위기가 최고조로 달한 상황 속에서 덤블도어는<br>
+                            더 이상 방관자로 머물 수 없는 순간을 맞이하고, 서서히 숨겨진 비밀이 드러나는데…<br>
+                        </p>
+                    </div>
+                </div>
+                <div id="teas">
+                    <iframe id="teas" src="https://www.youtube.com/embed/N4Ds-d2PQ-I" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <br><br>
+            <div id="crimecity">
+                <div id="intro">
+                    <div id="pos">
+                        <img id="poster" src="media\crimecity.jpg">
+                    </div>
+                    <div id="con">
+                        <p>
+                            “느낌 오지? 이 놈 잡아야 하는 거”<br>
+                            가리봉동 소탕작전 후 4년 뒤,<br>
+                            금천서 강력반은 베트남으로 도주한 용의자를 인도받아 오라는 미션을 받는다.<br>
+                            괴물형사 ‘마석도’(마동석)와 ‘전일만’(최귀화) 반장은 현지 용의자에게서 수상함을 느끼고,<br>
+                            그의 뒤에 무자비한 악행을 벌이는 ‘강해상’(손석구)이 있음을 알게 된다.<br>
+                            ‘마석도’와 금천서 강력반은 한국과 베트남을 오가며<br>
+                            역대급 범죄를 저지르는 ‘강해상’을 본격적으로 쫓기 시작하는데...<br>
+                            나쁜 놈들 잡는 데 국경 없다!<br>
+                            통쾌하고 화끈한 범죄 소탕 작전이 다시 펼쳐진다!
+                        </p>
+                    </div>
+                </div>
+                <div id="teas">
+                    <iframe id="teas" src="https://www.youtube.com/embed/Lcy1vnU7RHw" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <br><br>
+            <div id="jurassic">
+                <div id="intro">
+                    <div id="pos">
+                        <img id="poster" src="media\jurassicworld.jpg">
+                    </div>
+                    <div id="con">
+                        <p>
+                            이제 모든 것이 끝난다, <br>
+                            지상 최대 블록버스터의 압도적 피날레! <br>
+                            공룡들의 터전이었던 이슬라 누블라 섬이 파괴된 후, <br>
+                            마침내 공룡들은 섬을 벗어나 세상 밖으로 출몰한다. <br>
+                            지상에 함께 존재해선 안 될 위협적 생명체인 공룡의 등장으로 <br>
+                            인류 역사상 겪어보지 못한 사상 최악의 위기를 맞이한 인간들. <br>
+                            지구의 최상위 포식자 자리 걸고 인간과 공룡의 최후의 사투가 펼쳐진다<br>
+                        </p>
+                    </div>
+                </div>
+                <div id="teas">
+                    <iframe id="teas" src="https://www.youtube.com/embed/DSEfRVqjbFA" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>\
+        </section>
+        <br><br><br><br><br><br><br>
+        <footer id="footer">
+            <div id="info">
+                <h3>&nbsp;&nbsp;INFO</h3>
+                <br>
+                <p>
+                    &nbsp;&nbsp;한국외국어대학교<br>
+                    &nbsp;&nbsp;웹프로그래밍 22-1<br>
+                    &nbsp;&nbsp;대표 남호석<br>
+                    &nbsp;&nbsp;서울특별시 동대문구 이문로 107<br>
+                </p>
+                <br><br>
+                <h4>&nbsp;&nbsp;Copyright © 2022 작은 극장 all right reserved.</h4>
+            </div>
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.192795667621!2d127.05603051555362!3d37.59762133010464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb747a8c6295%3A0x7a732121ee3b1bd5!2z7ISc7Jq47Yq567OE7IucIOuPmeuMgOusuOq1rCDsnbTrrLjroZwgMTA3!5e0!3m2!1sko!2skr!4v1653120817706!5m2!1sko!2skr"
+                    width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

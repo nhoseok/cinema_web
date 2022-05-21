@@ -3,27 +3,102 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>시골 극장</title>
+    <title>작은 극장</title>
+    <style>
+        @import url(design.css);
+    </style>
 </head>
 
 <body>
-    <header>
-        <div id="mylogo"><a href="main.html"><img src="media\mylogo.png"></a></div>
-        <div id="menu"><a href="main.html">홈</a><a href="movie.html">상영영화</a><a href="theater.html">극장안내</a></div>
-    </header>
-    <section>
-        <div id="aboutTheater">
-            <h3>우리 극장은...</h3>
-            <p>
-                안녕하세요, 시골 극장입니다. <br>
-                저희 극장에 와주셔서 감사합니다. <br>
-                안녕히가세요. <br>
-            </p>
-        </div>
-    </section>
-    <footer>
-        <div id="info"></div>
-    </footer>
+    <div id="wrap">
+        <header id="header">
+            <div id="mylogo"><a href="main.html"><img src="media\mylogo.png" style="width: 200px; height: 200px"></a>
+            </div>
+            <div id="menu">
+                <a href="main.html"><img src="media\home.png" style="width: 80px; height: 80px;"></a>
+                <a href="movie.html"><img src="media\film.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+                <a href="theater.html"><img src="media\theater.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+            </div>
+        </header>
+        <br>
+        <br>
+        <section id="aboutTheater">
+            <div id="theaterpicbox">
+                <img id="theaterpic" src="media\theaterpicture.png">
+            </div>
+            <div id="introtheater">
+                <h3>&nbsp;우리 극장은...</h3>
+                <p>
+                    &nbsp;안녕하세요, 작은 극장입니다. <br>
+                    &nbsp;저희 극장에 와주셔서 감사합니다. <br>
+                    &nbsp;저희 극장은 2022년 한국외대 웹프로그래밍 강의로 탄생하였습니다. <br>
+                    &nbsp;어떻게 봐도 작고 볼품없지만, <br>
+                    &nbsp;어느 단 한 사람이라도 좋은 극장이었다고 기억해준다면, <br>
+                    &nbsp;그것 하나로 저희는 행복합니다. <br>
+                    &nbsp;방문해 주셔서 감사합니다.
+                </p>
+            </div>
+        </section>
+        <br><br><br><br>
+        <section id="historyetc">
+            <div>
+                <h3>연혁</h3>
+                <p>
+                    2022.5 서울특별시 동대문구 작은 극장 개관
+                </p>
+            </div>
+            <br><br><br><br>
+            <div>
+                <h3>장점</h3>
+                <p>
+                    1. 나만의 작은 극장<br><br>
+                    2. 함께하는 소중한 극장<br><br>
+                    3. 나눔의 가치를 아는 극장<br><br>
+                    4. 무한한 가능성의 극장<br><br>
+                </p>
+            </div>
+            <br><br><br><br>
+            <div id="way">
+                <h3>오시는 길</h3>
+                <p>서울특별시 동대문구 이문로 107</p>
+                <p>
+                    대중교통<br>
+                    버스 외대앞역 : 120, 147, 261, 273, N13, 1222<br>
+                    지하철 외대앞역 : 1호선<br>
+                    지하철 회기역 : 1호선, 경의중앙선, 경춘선
+                </p>
+                <div id="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.192795667621!2d127.05603051555362!3d37.59762133010464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb747a8c6295%3A0x7a732121ee3b1bd5!2z7ISc7Jq47Yq567OE7IucIOuPmeuMgOusuOq1rCDsnbTrrLjroZwgMTA3!5e0!3m2!1sko!2skr!4v1653120817706!5m2!1sko!2skr"
+                        width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br>
+        <footer id="footer">
+            <div id="info">
+                <h3>&nbsp;&nbsp;INFO</h3>
+                <br>
+                <p>
+                    &nbsp;&nbsp;한국외국어대학교<br>
+                    &nbsp;&nbsp;웹프로그래밍 22-1<br>
+                    &nbsp;&nbsp;대표 남호석<br>
+                    &nbsp;&nbsp;서울특별시 동대문구 이문로 107<br>
+                </p>
+                <br><br>
+                <h4>&nbsp;&nbsp;Copyright © 2022 작은 극장 all right reserved.</h4>
+            </div>
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.192795667621!2d127.05603051555362!3d37.59762133010464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb747a8c6295%3A0x7a732121ee3b1bd5!2z7ISc7Jq47Yq567OE7IucIOuPmeuMgOusuOq1rCDsnbTrrLjroZwgMTA3!5e0!3m2!1sko!2skr!4v1653120817706!5m2!1sko!2skr"
+                    width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

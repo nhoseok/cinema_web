@@ -1,0 +1,156 @@
+#wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mylogo {
+    display: flex;
+    justify-content: center;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+}
+
+#section {
+    display: flex;
+    justify-content: center;
+}
+
+#spot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#recommendmovie {
+    display: flex;
+    justify-content: center;
+}
+
+#moviecontent {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#teaser {
+    display: flex;
+    justify-content: center;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+#info {
+    color: white;
+}
+
+#ourfilms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nowplay {
+    text-align: center;
+}
+
+#drstrange {
+    display: flex;
+    justify-content: space-around;
+}
+
+#dumbledore {
+    display: flex;
+    justify-content: space-around;
+}
+
+#crimecity {
+    display: flex;
+    justify-content: space-around;
+}
+
+#jurassic {
+    display: flex;
+    justify-content: space-around;
+}
+
+#intro {
+    flex-direction: column;
+}
+
+#poster {
+    width: 180px;
+    height: 260px;
+}
+
+#teas {
+    width: 600px;
+    height: 400px;
+}
+
+#aboutTheater {
+    display: flex;
+    justify-content: center;
+}
+
+#theaterpicbox {
+    display: inline-flex;
+}
+
+#introtheater {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+#theaterpic {
+    width: 250px;
+    height: 225px;
+}
+
+#historyetc {
+    text-align: center;
+}
+
+#checkingbook {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#timechoice {
+    width: 300px;
+}
+
+#ticket {
+    width: 510px;
+    height: 300px;
+}
+
+#num {
+    width: 350px;
+}
+
+#mov {
+    width: 350px;
+}
+
+#seat {
+    width: 350px;
+}
+
+#bar {
+    height: 200px;
+}

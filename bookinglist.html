@@ -3,64 +3,137 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>시골 극장</title>
+    <title>작은 극장</title>
+    <style>
+        @import url(design.css);
+    </style>
 </head>
 
 <body>
-    <header>
-        <div id="mylogo"><a href="main.html"><img src="media\mylogo.png"></a></div>
-        <div id="menu"><a href="main.html">홈</a><a href="movie.html">상영영화</a><a href="theater.html">극장안내</a></div>
-    </header>
-    <section>
-        <h3>예약하신 날짜 및 시간을 입력해주세요</h3>
+    <div id="wrap">
+        <header id="header">
+            <div id="mylogo"><a href="main.html"><img src="media\mylogo.png" style="width: 200px; height: 200px"></a>
+            </div>
+            <div id="menu">
+                <a href="main.html"><img src="media\home.png" style="width: 80px; height: 80px;"></a>
+                <a href="movie.html"><img src="media\film.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+                <a href="theater.html"><img src="media\theater.png"
+                        style="width: 80px; height: 80px; margin-left: 50px;"></a>
+            </div>
+        </header>
         <br>
-        <fieldset>
-            <legend>날짜 및 시간 선택</legend>
-            <label for="time">날짜 및 시간 : </label>
-            <input type="datetime-local" id="mytime">
-        </fieldset>
-        <input type="button" value="입력" onclick="myBooklist('mytime')">
         <br>
-        <table border="1">
-            <tr><th>예약인원</th><td id="num">0</td></tr>
-            <tr><th>예약영화</th><td id="mov">0</td></tr>
-            <tr><th>예약좌석</th><td id="seat">0</td></tr>
-        </table>
-        <input type="button" value="예약취소" onclick="cancelBook()">
-        <script type="text/javascript">
-            var myArr = []
-            function myBooklist(id){
-                var myTime = document.getElementById(id).value
-                myArr = JSON.parse(localStorage.getItem(myTime))
-                console.log(myArr)
-                var myBookernum = myArr[0]
-                var myMovie = myArr[1]
-                var mySeats = myArr[2]
-                console.log(myBookernum)
-                console.log(myMovie)
-                console.log(mySeats)
-                
-                document.getElementById("num").innerHTML = myBookernum
-                document.getElementById("mov").innerHTML = myMovie
-                document.getElementById("seat").innerHTML = mySeats
-            }
+        <section id="checkingbook">
+            <h3>예약하신 날짜 및 시간을 입력해주세요</h3>
+            <br>
+            <fieldset id="timechoice">
+                <legend>날짜 및 시간 선택</legend>
+                <label for="time">날짜 및 시간 : </label>
+                <input type="datetime-local" id="mytime"><br><br>
+                <input type="button" value="입력" onclick="myBooklist('mytime')">
+                <input type="button" value="예약취소" onclick="cancelBook()">
+            </fieldset>
+            <br>
+            <h3>-영화표-</h3>
+            <table id="ticket" border="1">
+                <tr>
+                    <th>예약인원</th>
+                    <td id="num">0</td>
+                </tr>
+                <tr>
+                    <th>예약영화</th>
+                    <td id="mov">0</td>
+                </tr>
+                <tr>
+                    <th>예약좌석</th>
+                    <td id="seat">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="bar"><img id="barcode" src="media\barcode.jpg"
+                            style="display: none; height: 180px;"></td>
+                </tr>
+            </table>
+            <h3>당신의 예약 목록입니다</h3>
+            <div id="booklistcontent"></div>
+            <br><br><br>
+            <script type="text/javascript">
+                var bookList = []
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    const value = JSON.parse(localStorage.getItem(key));
+                    bookList.push(key + "  >>  " + value[1] + "<br><br>")
+                }
 
-            function cancelBook() {
-                var delTime = document.getElementById("mytime")
-                console.log(delTime)
-                localStorage.removeItem(delTime.value)
-                alert('예약이 삭제되었습니다.')
+                document.getElementById("booklistcontent").innerHTML = bookList
 
-                document.getElementById("num").innerHTML = 0
-                document.getElementById("mov").innerHTML = 0
-                document.getElementById("seat").innerHTML = 0
-            }
-        </script>
-    </section>
-    <footer>
-        <div id="info"></div>
-    </footer>
-    
+                var myArr = []
+                function myBooklist(id) {
+                    var myTime = document.getElementById(id).value
+                    myArr = JSON.parse(localStorage.getItem(myTime))
+                    console.log(myArr)
+                    var myBookernum = myArr[0]
+                    var myMovie = myArr[1]
+                    var mySeats = myArr[2]
+                    console.log(myBookernum)
+                    console.log(myMovie)
+                    console.log(mySeats)
+
+                    document.getElementById("num").innerHTML = myBookernum
+                    document.getElementById("mov").innerHTML = myMovie
+                    document.getElementById("seat").innerHTML = mySeats
+
+                    document.getElementById("barcode").style.display = "inline"
+                }
+
+                function cancelBook() {
+                    if (localStorage.length !== 0) {
+                        var delTime = document.getElementById("mytime")
+                        console.log(delTime)
+                        localStorage.removeItem(delTime.value)
+                        alert('예약이 삭제되었습니다.')
+
+                        document.getElementById("num").innerHTML = 0
+                        document.getElementById("mov").innerHTML = 0
+                        document.getElementById("seat").innerHTML = 0
+                        document.getElementById("barcode").style.display = "none"
+                        var bookList = []
+                        for (let i = 0; i < localStorage.length; i++) {
+                            const key = localStorage.key(i);
+                            const value = JSON.parse(localStorage.getItem(key));
+                            bookList.push(key + "  >>  " + value[1] + "<br><br>")
+                        }
+                        document.getElementById("booklistcontent").innerHTML = bookList
+                    }
+                    else {
+                        alert('예약목록이 비었습니다!')
+                    }
+                }
+            </script>
+        </section>
+        <br><br><br><br><br><br><br>
+        <footer id="footer">
+            <div id="info">
+                <h3>&nbsp;&nbsp;INFO</h3>
+                <br>
+                <p>
+                    &nbsp;&nbsp;한국외국어대학교<br>
+                    &nbsp;&nbsp;웹프로그래밍 22-1<br>
+                    &nbsp;&nbsp;대표 남호석<br>
+                    &nbsp;&nbsp;서울특별시 동대문구 이문로 107<br>
+                </p>
+                <br><br>
+                <h4>&nbsp;&nbsp;Copyright © 2022 작은 극장 all right reserved.</h4>
+            </div>
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.192795667621!2d127.05603051555362!3d37.59762133010464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb747a8c6295%3A0x7a732121ee3b1bd5!2z7ISc7Jq47Yq567OE7IucIOuPmeuMgOusuOq1rCDsnbTrrLjroZwgMTA3!5e0!3m2!1sko!2skr!4v1653120817706!5m2!1sko!2skr"
+                    width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </footer>
+    </div>
+
 </body>
 
 </html>
