@@ -2,16 +2,27 @@
 <html>
 
 <head>
-    <title></title>
+    <title>예 매</title>
+    <style>
+        #selectingseat {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+        }
+
+        #booksite {
+            width: 350px;
+        }
+    </style>
 </head>
 
 <body>
     <h2>빠른 예매</h2>
     <form>
-        <fieldset>
+        <fieldset id="booksite">
             <legend>예약 정보</legend>
             <label for="reservNum">예약인원 : </label>
-            <select name="reservNum" id="reservNum">
+            <select name="reservNum" id="reservNum" required>
                 <label><option value="1" selected>1명</option></label>
                 <label><option value="2">2명</option></label>
                 <label><option value="3">3명</option></label>
@@ -22,7 +33,7 @@
                 <label><option value="8">8명</option></label>
             </select><br>
             <label for="selectMovie">영화 : </label>
-            <select name="selectMovie" id="selectMovie">
+            <select name="selectMovie" id="selectMovie" required>
                 <label><option>닥터 스트레인지: 대혼돈의 멀티버스</option></label>
                 <label><option>신비한 동물들과 덤블도어의 비밀</option></label>
                 <label><option>범죄도시2</option></label>
@@ -30,22 +41,22 @@
             </select>
         </fieldset>
         <br>
-        <fieldset>
+        <fieldset id="booksite">
             <legend>날짜 및 시간 선택</legend>
             <label for="time">날짜 및 시간 : </label>
-            <input type="datetime-local" id="time">
+            <input type="datetime-local" id="time" required>
         </fieldset>
         <br>
-        <fieldset>
+        <fieldset id="booksite">
             <legend>좌석 선택</legend>
-            <table border="1" style="width: 200px; height: 100px;">
+            <table id="selectingseat" border="1">
                 <tr><td id="a1" onclick="changeCol('a1')">A-1</td><td id="a2" onclick="changeCol('a2')">A-2</td><td id="a3" onclick="changeCol('a3')">A-3</td><td id="a4" onclick="changeCol('a4')">A-4</td></tr>
                 <tr><td id="b1" onclick="changeCol('b1')">B-1</td><td id="b2" onclick="changeCol('b2')">B-2</td><td id="b3" onclick="changeCol('b3')">B-3</td><td id="b4" onclick="changeCol('b4')">B-4</td></tr>
             </table>
         </fieldset>
         <br>
-        <input type="button" value="예약" onclick="book()">
-        <input type="reset" value="취소">
+        <input type="submit" value="예약" onclick="book()">
+        <input type="button" value="취소" onclick="closePopup()">
     </form>
     <script type="text/javascript">
         var bookerNum = document.getElementById('reservNum')
@@ -55,11 +66,14 @@
         var seatArr = []
 
         function book() {
-            if (Number(bookerNum.value) === seatArr.length){
+            if (Number(bookerNum.value) === seatArr.length && document.getElementById("time").value !== ""){
                 price = Number(bookerNum.value) * 8000
                 alert('"' + selectMovie.value + '" 영화 티켓을' + bookerNum.value + '장 구매하여 총' + price + '원 입니다.')
                 localStorage.setItem(time.value, JSON.stringify([bookerNum.value, selectMovie.value, seatArr]))
                 console.log(seatArr)
+            }
+            else if (Number(bookerNum.value) === seatArr.length && document.getElementById("time").value === "") {
+                alert('날짜를 입력하세요')
             }
             else {
                 alert('예약인원과 좌석 수가 다릅니다!')
@@ -81,6 +95,10 @@
                 cellId.style.backgroundColor = 'green'
                 seatArr.push(cellId.innerHTML)
             }
+        }
+
+        function closePopup() {
+            window.close()
         }
     </script>
 </body>

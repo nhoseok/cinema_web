@@ -30,9 +30,9 @@
             <fieldset id="timechoice">
                 <legend>날짜 및 시간 선택</legend>
                 <label for="time">날짜 및 시간 : </label>
-                <input type="datetime-local" id="mytime"><br><br>
-                <input type="button" value="입력" onclick="myBooklist('mytime')">
-                <input type="button" value="예약취소" onclick="cancelBook()">
+                <input type="datetime-local" id="mytime" required><br><br>
+                <input type="submit" value="입력" onclick="myBooklist('mytime')">
+                <input type="submit" value="예약취소" onclick="cancelBook()">
             </fieldset>
             <br>
             <h3>-영화표-</h3>
@@ -86,10 +86,10 @@
                     document.getElementById("barcode").style.display = "inline"
                 }
 
+                var delTime = document.getElementById("mytime")
                 function cancelBook() {
-                    if (localStorage.length !== 0) {
-                        var delTime = document.getElementById("mytime")
-                        console.log(delTime)
+                    console.log(delTime, localStorage.getItem(delTime))
+                    if (localStorage.length !== 0 && localStorage.getItem(delTime.value) != null) {
                         localStorage.removeItem(delTime.value)
                         alert('예약이 삭제되었습니다.')
 
@@ -104,6 +104,9 @@
                             bookList.push(key + "  >>  " + value[1] + "<br><br>")
                         }
                         document.getElementById("booklistcontent").innerHTML = bookList
+                    }
+                    else if (localStorage.length !== 0 && localStorage.getItem(delTime.value) == null) {
+                        alert('해당 시간에 예약이 없습니다!')
                     }
                     else {
                         alert('예약목록이 비었습니다!')
