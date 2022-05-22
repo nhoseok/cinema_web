@@ -4,15 +4,7 @@
 <head>
     <title>예 매</title>
     <style>
-        #selectingseat {
-            width: 200px;
-            height: 100px;
-            text-align: center;
-        }
-
-        #booksite {
-            width: 350px;
-        }
+        @import url(design.css);
     </style>
 </head>
 
@@ -66,14 +58,17 @@
         var seatArr = []
 
         function book() {
-            if (Number(bookerNum.value) === seatArr.length && document.getElementById("time").value !== ""){
+            console.log(seatArr)
+            if (Number(bookerNum.value) === seatArr.length && time.value !== "" && localStorage.getItem(time.value) == null){
                 price = Number(bookerNum.value) * 8000
                 alert('"' + selectMovie.value + '" 영화 티켓을' + bookerNum.value + '장 구매하여 총' + price + '원 입니다.')
                 localStorage.setItem(time.value, JSON.stringify([bookerNum.value, selectMovie.value, seatArr]))
-                console.log(seatArr)
             }
-            else if (Number(bookerNum.value) === seatArr.length && document.getElementById("time").value === "") {
-                alert('날짜를 입력하세요')
+            else if (Number(bookerNum.value) === seatArr.length && time.value === "" && localStorage.getItem(time.value) == null) {
+                alert('날짜를 입력하세요!')
+            }
+            else if (Number(bookerNum.value) === seatArr.length && time.value !== "" && localStorage.getItem(time.value) != null) {
+                alert('선택한 시간에 예약이 존재합니다!')
             }
             else {
                 alert('예약인원과 좌석 수가 다릅니다!')
@@ -85,7 +80,7 @@
             if (cellId.style.backgroundColor == 'green') {
                 cellId.style.backgroundColor = 'white'
                 for(let i = 0; i < seatArr.length; i++) {
-                    if(seatArr[i] === cellId) {
+                    if(seatArr[i] === cellId.innerHTML) {
                         seatArr.splice(i, 1);
                         i--;
                     }

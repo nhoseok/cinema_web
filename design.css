@@ -56,49 +56,6 @@
     color: white;
 }
 
-#ourfilms {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#nowplay {
-    text-align: center;
-}
-
-#drstrange {
-    display: flex;
-    justify-content: space-around;
-}
-
-#dumbledore {
-    display: flex;
-    justify-content: space-around;
-}
-
-#crimecity {
-    display: flex;
-    justify-content: space-around;
-}
-
-#jurassic {
-    display: flex;
-    justify-content: space-around;
-}
-
-#intro {
-    flex-direction: column;
-}
-
-#poster {
-    width: 180px;
-    height: 260px;
-}
-
-#teas {
-    width: 600px;
-    height: 400px;
-}
 
 #aboutTheater {
     display: flex;
@@ -154,4 +111,68 @@
 
 #bar {
     height: 200px;
+}
+
+#selectingseat {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+#booksite {
+    width: 350px;
+}
+
+#ourfilms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nowplay {
+    text-align: center;
+}
+
+#drstrange {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#dumbledore {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#crimecity {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#jurassic {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+#intro {
+    display: flex;
+}
+
+#poster {
+    width: 180px;
+    height: 260px;
+}
+
+#teasbox {
+    display: flex;
+    justify-content: center;
+}
+
+#teas {
+    width: 800px;
+    height: 400px;
 }
